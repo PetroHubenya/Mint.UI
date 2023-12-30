@@ -14,15 +14,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+            <tr *ngFor="let coin of coins">
+                <th scope="row">{{coin.rank}}</th>
+                <td>{{coin.name}}</td>
+                <td>{{coin.priceUsd}}</td>
+                <td>{{coin.marketCapUsd}}</td>
+                <td>{{coin.vwap24Hr}}</td>
+                <td>{{coin.supply}}</td>
+                <td>{{coin.volumeUsd24Hr}}</td>
+                <td>{{coin.changePercent24Hr}}</td>
             </tr>
         </tbody>
     </table>
