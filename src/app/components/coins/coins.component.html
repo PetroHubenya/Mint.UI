@@ -16,13 +16,13 @@
         <tbody>
             <tr *ngFor="let coin of coins">
                 <th scope="row">{{coin.rank}}</th>
-                <td>{{coin.name}}</td>
-                <td>{{coin.priceUsd}}</td>
-                <td>{{coin.marketCapUsd}}</td>
-                <td>{{coin.vwap24Hr}}</td>
-                <td>{{coin.supply}}</td>
-                <td>{{coin.volumeUsd24Hr}}</td>
-                <td>{{coin.changePercent24Hr}}</td>
+                <td>{{ coin.name }}</td>
+                <td>{{ coin.priceUsd | currency }}</td>
+                <td>{{ coin.marketCapUsd | currency }}</td>
+                <td>{{ coin.vwap24Hr | currency }}</td>
+                <td>{{ coin.supply | currency }}</td>
+                <td>{{ coin.volumeUsd24Hr | currency }}</td>
+                <td>{{ coin.changePercent24Hr | currency }}</td>
             </tr>
         </tbody>
     </table>
