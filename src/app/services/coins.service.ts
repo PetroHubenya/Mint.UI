@@ -15,6 +15,6 @@ export class CoinsService {
   constructor(private http: HttpClient) {}
 
   GetTopNCoins(): Observable<Coin[]> {
-    return this.http.get<Coin[]>(this.baseApiUrl + "/coins/10");
+    return this.http.get<Coin[]>(this.baseApiUrl + "/Coin/limit=10");
   }
 }

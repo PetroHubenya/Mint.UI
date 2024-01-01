@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Coin } from 'src/app/models/coin.model';
+import { CoinsService } from 'src/app/services/coins.service';
 
 @Component({
   selector: 'app-coins',
@@ -12,11 +13,18 @@ export class CoinsComponent implements OnInit{
   
   coins: Coin[] = [];
 
-  constructor(private router: Router){
-
-  }
+  constructor(
+    private coinService: CoinsService,
+    private router: Router) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.coinService.GetTopNCoins().subscribe({
+      next: (coins) => {
+        this.coins = coins;
+      },
+      error: (responce) => {
+        console.log(responce);
+      }
+    })
   }
 }
