@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CoinsService {
 
   // baseApiUrl should be moved to the settings file.
@@ -13,9 +14,7 @@ export class CoinsService {
 
   constructor(private http: HttpClient) {}
 
-  // I have stopped at 46:33 of the youtube video.
-
-  GetTopNCoinsAsync(): Observable<Coins[]> {
-    
+  GetTopNCoins(): Observable<Coin[]> {
+    return this.http.get<Coin[]>(this.baseApiUrl + "/coins/10");
   }
 }
