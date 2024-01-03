@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let coin of coins">
+            <tr class="clickable" *ngFor="let coin of coins" [routerLink]="['/coin', coin.id]">
                 <th scope="row">{{coin.rank}}</th>
                 <td>{{ coin.name }}</td>
                 <td>{{ coin.priceUsd | currency }}</td>
