@@ -22,7 +22,7 @@
                 <td>{{ coin.vwap24Hr | currency }}</td>
                 <td>{{ coin.supply | currency }}</td>
                 <td>{{ coin.volumeUsd24Hr | currency }}</td>
-                <td>{{ coin.changePercent24Hr | currency }}</td>
+                <td>{{ coin.changePercent24Hr | percent:'1.2-2' }}</td>
             </tr>
         </tbody>
     </table>
