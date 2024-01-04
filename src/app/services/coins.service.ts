@@ -14,7 +14,13 @@ export class CoinsService {
 
   constructor(private http: HttpClient) {}
 
+  // Get top n coins.
   GetTopNCoins(): Observable<Coin[]> {
     return this.http.get<Coin[]>(this.baseApiUrl + "/Coin/limit=10");
   }
+
+  // Get coin by id.
+  GetCoinById(id: string): Observable<Coin> {
+    return this.http.get<Coin>(this.baseApiUrl + "/Coin/id=" + id);
+  } 
 }

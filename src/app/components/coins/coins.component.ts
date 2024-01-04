@@ -15,7 +15,8 @@ export class CoinsComponent implements OnInit{
 
   constructor(
     private coinService: CoinsService,
-    private router: Router) {}
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.coinService.GetTopNCoins().subscribe({

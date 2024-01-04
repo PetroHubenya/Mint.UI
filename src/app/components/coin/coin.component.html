@@ -1,1 +1,94 @@
-<p>coin works!</p>
+<div class="container">
+    <h1>{{ coin.name }}</h1>
+    <dl class="row">
+        
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.id }}</dd>
+              <dd class="col-sm-8">Unique identifier for asset.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Rank</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.rank }}</dd>
+              <dd class="col-sm-8">Rank is in ascending order - this number is directly associated with the marketcap whereas the highest marketcap receives rank 1.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Symbol</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.symbol }}</dd>
+              <dd class="col-sm-8">Most common symbol used to identify this asset on an exchange.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.name }}</dd>
+              <dd class="col-sm-8">Proper name for asset.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Supply</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.supply | currency: 'assets ' }}</dd>
+              <dd class="col-sm-8">Available supply for trading.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Max Supply</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.maxSupply | currency: 'assets ' }}</dd>
+              <dd class="col-sm-8">Total quantity of asset issued.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Market Cap Usd</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.marketCapUsd | currency }}</dd>
+              <dd class="col-sm-8">Supply x Price.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Volume Usd (24Hr)</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.volumeUsd24Hr | currency }}</dd>
+              <dd class="col-sm-8">Quantity of trading volume represented in USD over the last 24 hours.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Price Usd</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.priceUsd | currency }}</dd>
+              <dd class="col-sm-8">Volume-weighted price based on real-time market data, translated to USD.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Change Percent (24Hr)</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.changePercent24Hr | percent:'1.2-2' }}</dd>
+              <dd class="col-sm-8">The direction and value change in the last 24 hours.</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">VWAP (24Hr)</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+              <dd class="col-sm-4">{{ coin.changePercent24Hr | currency }}</dd>
+              <dd class="col-sm-8">Volume Weighted Average Price in the last 24 hours.</dd>
+            </dl>
+        </dd>
+
+    </dl>
+</div>
