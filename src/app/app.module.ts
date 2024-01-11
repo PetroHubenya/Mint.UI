@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoinsComponent } from './components/coins/coins.component';
 import { CoinComponent } from './components/coin/coin.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoinsComponent,
-    CoinComponent
+    CoinComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

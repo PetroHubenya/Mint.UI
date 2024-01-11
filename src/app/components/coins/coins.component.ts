@@ -29,6 +29,6 @@ export class CoinsComponent implements OnInit{
     })
   }
 
-                // Зупинив відео на 53:25
+  
 
 }
