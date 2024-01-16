@@ -10,12 +10,34 @@
           <a class="nav-link active" aria-current="page" [routerLink]="['coins']">Coins</a>
         </li>
       </ul>
-      <form class="d-flex" role="search" >
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <!--
+      <form class="d-flex" role="search" (ngSubmit)="onSubmit" #searchForm="ngForm">
+        <div class="form-group">
+          <input class="form-control me-2" type="search" 
+                 placeholder="Search" aria-label="Search"
+                 id="search" [(ngModel)]="searchTest" name="search">
+          <button class="btn btn-outline-light" type="submit"
+                  [disabled]="!searchForm.form.valid">
+            Search
+          </button>
+        </div>
+      </form>
+      -->
+      <form class="d-flex" role="search" (ngSubmit)="onSubmit" #searchForm="ngForm">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+               id="search" [(ngModel)]="searchTest" name="search">
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Search</div>
+    <div class="col-xs-9">{{ searchTest }}</div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>
