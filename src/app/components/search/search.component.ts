@@ -13,28 +13,34 @@ export class SearchComponent implements OnInit {
 
   searchString = '';
 
-  coin: Coin = {
-    id: '',
-    rank: 0,
-    symbol: '',
-    name: '',
-    supply: 0,
-    maxSupply: 0,
-    marketCapUsd: 0,
-    volumeUsd24Hr: 0,
-    priceUsd: 0,
-    changePercent24Hr: 0,
-    vwap24Hr: 0
-  }
+  coins: Coin[] = [];
 
   constructor(
     private coinService: CoinsService,
     private router: Router,
     private route: ActivatedRoute 
-  ){}
+  ) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getCoins();
+  }
+
+  getCoins(): void {
+    this.route.paramMap.subscribe({
+      next: (param) => {
+        const searchString = param.get('searchString');
+        if (searchString !== null) {
+          this.coinService.SearchCoinByNameOrSymbol(searchString).subscribe({
+            next: (responce) => {
+              this.coins = responce;      // Receive the responce from the API and use it to update the 'coins' object.
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        }
+      }
+    })
   }
 
 }
