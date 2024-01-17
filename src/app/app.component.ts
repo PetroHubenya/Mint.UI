@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Search } from './models/search.model';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,7 @@ import { Search } from './models/search.model';
 })
 
 export class AppComponent {
-  title = 'Mint.UI';
-
-  model = new Search('');
+  title = 'Mint.UI';  
 
   searchTest = '';
 
@@ -18,7 +15,5 @@ export class AppComponent {
 
   onSubmit() {
     this.submitted = true;
-  }
-
-  
+  }  
 }
