@@ -22,5 +22,5 @@ export class CoinsService {
   // Get coin by id.
   GetCoinById(id: string): Observable<Coin> {
     return this.http.get<Coin>(this.baseApiUrl + "/Coin/id=" + id);
-  } 
+  }
 }
