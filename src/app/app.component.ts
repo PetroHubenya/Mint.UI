@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Mint.UI';  
 
-  searchTest = '';
+  searchString = '';
 
   submitted = false;
 
