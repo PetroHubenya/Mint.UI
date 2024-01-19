@@ -9,22 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" [routerLink]="['coins']">Coins</a>
         </li>
-      </ul>      
-      <form class="d-flex" role="search" (ngSubmit)="onSubmit" #searchForm="ngForm">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-               id="search" [(ngModel)]="searchString" name="search">
-        <button class="btn btn-outline-light" type="submit" [routerLink]="['coins', searchString]">Search</button>
-      </form>
+      </ul>
     </div>
   </div>
 </nav>
-
-<div class="container">
-  <h2>You submitted the following:</h2>
-  <div class="row">
-    <div class="col-xs-3">Value of the "searchString" in the app.component.ts</div>
-    <div class="col-xs-9">{{ searchString }}</div>
-  </div>
-</div>
 
 <router-outlet></router-outlet>

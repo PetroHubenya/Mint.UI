@@ -1,18 +1,15 @@
 <div class="container">
-    <div class="row">
-      <div class="col-xs-3">Value of the "searchString" in the coins.component.ts</div>
-      <div class="col-xs-9">{{ searchString }}</div>
-    </div>
-</div>
-
-<div class="container">
     <h1>Coins</h1>
 
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-               id="search" [(ngModel)]="searchString" name="search">
-        <button class="btn btn-outline-light" type="submit" (click)="searchCoins()">Search</button>
-    </form>
+    
+
+    <div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                   id="search" [(ngModel)]="searchString" name="search">
+            <button class="btn btn-outline-dark" type="submit" (click)="searchCoins()">Search</button>
+        </form>
+    </div>
 
     <table class="table table-light table-hover" *ngIf="coins && coins.length > 0">
         <thead>
