@@ -26,6 +26,6 @@ export class CoinsService {
 
   // Search coins by name or symbol.
   SearchCoinByNameOrSymbol(searchString: string): Observable<Coin[]> {
-    return this.http.get<Coin[]>(this.baseApiUrl + "/Search/search=" + searchString);
+    return this.http.get<Coin[]>(this.baseApiUrl + "/Coin/search=" + searchString);
   }
 }

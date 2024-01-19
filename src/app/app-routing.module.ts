@@ -18,8 +18,8 @@ const routes: Routes = [
     component: CoinComponent
   },
   {
-    path: 'search/:searchString',
-    component: SearchComponent
+    path: 'coins/:searchString',
+    component: CoinsComponent
   }
 ];
 

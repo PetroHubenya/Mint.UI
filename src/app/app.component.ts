@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Mint.UI';  
 
   searchString = '';
-
+  
   submitted = false;
 
   onSubmit() {
