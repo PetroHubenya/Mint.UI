@@ -7,13 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Mint.UI';  
-
-  searchString = '';
-  
-  submitted = false;
-
-  onSubmit() {
-    this.submitted = true;
-  }  
+  title = 'Mint.UI';
 }

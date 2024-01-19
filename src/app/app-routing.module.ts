@@ -14,12 +14,12 @@ const routes: Routes = [
     component: CoinsComponent
   },
   {
-    path: 'coin/:id',
-    component: CoinComponent
-  },
-  {
     path: 'coins/:searchString',
     component: CoinsComponent
+  },
+  {
+    path: 'coin/:id',
+    component: CoinComponent
   }
 ];
 
