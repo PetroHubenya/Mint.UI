@@ -5,3 +5,7 @@
 .table-container {
     margin-top: 20px; /* Adjust the margin as needed */
 }
+
+.table-hover tbody tr:hover {
+    cursor: pointer;
+}
