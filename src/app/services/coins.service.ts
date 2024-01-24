@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Coin } from '../models/coin.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +10,20 @@ import { HttpClient } from '@angular/common/http';
 
 export class CoinsService {
 
-  // baseApiUrl should be moved to the settings file.
-  baseApiUrl: string = "https://localhost:7113";
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private configService: ConfigService) {}
 
   // Get top n coins.
   GetTopNCoins(): Observable<Coin[]> {
-    return this.http.get<Coin[]>(this.baseApiUrl + "/Coin/limit=10");
+    return this.http.get<Coin[]>(this.configService.apiUrl + "/Coin/limit=10");
   }
 
   // Get coin by id.
   GetCoinById(id: string): Observable<Coin> {
-    return this.http.get<Coin>(this.baseApiUrl + "/Coin/id=" + id);
+    return this.http.get<Coin>(this.configService.apiUrl + "/Coin/id=" + id);
   }
 
   // Search coins by name or symbol.
   SearchCoinByNameOrSymbol(searchString: string): Observable<Coin[]> {
-    return this.http.get<Coin[]>(this.baseApiUrl + "/Coin/search=" + searchString);
+    return this.http.get<Coin[]>(this.configService.apiUrl + "/Coin/search=" + searchString);
   }
 }
