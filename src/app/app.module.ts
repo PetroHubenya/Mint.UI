@@ -8,9 +8,9 @@ import { FormsModule } from '@angular/forms';
 
 import { CoinsComponent } from './components/coins/coins.component';
 import { CoinComponent } from './components/coin/coin.component';
+import { ConfigService } from './services/config.service';
 import { SearchComponent } from './components/search/search.component';
-
-
+import { CoinsService } from './services/coins.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,10 @@ import { SearchComponent } from './components/search/search.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    CoinsService,
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 
