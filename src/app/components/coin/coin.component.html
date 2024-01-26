@@ -77,7 +77,7 @@
         <dt class="col-sm-3">Change Percent (24Hr)</dt>
         <dd class="col-sm-9">
             <dl class="row">
-              <dd class="col-sm-4">{{ coin.changePercent24Hr | percent:'1.2-2' }}</dd>
+              <dd class="col-sm-4">{{ (coin.changePercent24Hr ?? 0) / 100 | percent:'1.2-2' }}</dd>
               <dd class="col-sm-8">The direction and value change in the last 24 hours.</dd>
             </dl>
         </dd>
