@@ -10,12 +10,14 @@ import { CoinsComponent } from './components/coins/coins.component';
 import { CoinComponent } from './components/coin/coin.component';
 import { ConfigService } from './services/config.service';
 import { CoinsService } from './services/coins.service';
+import { UsdPipe } from './models/usd-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoinsComponent,
-    CoinComponent
+    CoinComponent,
+    UsdPipe
   ],
   imports: [
     BrowserModule,
