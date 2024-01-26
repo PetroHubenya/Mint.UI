@@ -28,11 +28,11 @@
                     <th scope="row">{{coin.rank}}</th>
                     <td>{{ coin.name }}</td>
                     <td>{{ coin.priceUsd | currency }}</td>
-                    <td>{{ coin.marketCapUsd | currency }}</td>
+                    <td>{{ coin.marketCapUsd | usdPipe }}</td>
                     <td>{{ coin.vwap24Hr | currency }}</td>
-                    <td>{{ coin.supply | currency }}</td>
-                    <td>{{ coin.volumeUsd24Hr | currency }}</td>
-                    <td>{{ coin.changePercent24Hr | percent:'1.2-2' }}</td>
+                    <td>{{ coin.supply | usdPipe }}</td>
+                    <td>{{ coin.volumeUsd24Hr | usdPipe }}</td>
+                    <td>{{ ((coin?.changePercent24Hr ?? 0) / 100) | percent:'1.2-2' }}</td>
                 </tr>
             </tbody>
         </table>
