@@ -37,7 +37,7 @@
         <dt class="col-sm-3">Supply</dt>
         <dd class="col-sm-9">
             <dl class="row">
-              <dd class="col-sm-4">{{ coin.supply | currency: 'assets ' }}</dd>
+              <dd class="col-sm-4">{{ coin.supply | assetPipe }}</dd>
               <dd class="col-sm-8">Available supply for trading.</dd>
             </dl>
         </dd>
@@ -45,7 +45,7 @@
         <dt class="col-sm-3">Max Supply</dt>
         <dd class="col-sm-9">
             <dl class="row">
-              <dd class="col-sm-4">{{ coin.maxSupply | currency: 'assets ' }}</dd>
+              <dd class="col-sm-4">{{ coin.maxSupply | assetPipe }}</dd>
               <dd class="col-sm-8">Total quantity of asset issued.</dd>
             </dl>
         </dd>
@@ -53,7 +53,7 @@
         <dt class="col-sm-3">Market Cap Usd</dt>
         <dd class="col-sm-9">
             <dl class="row">
-              <dd class="col-sm-4">{{ coin.marketCapUsd | currency }}</dd>
+              <dd class="col-sm-4">{{ coin.marketCapUsd | usdPipe }}</dd>
               <dd class="col-sm-8">Supply x Price.</dd>
             </dl>
         </dd>

@@ -11,13 +11,15 @@ import { CoinComponent } from './components/coin/coin.component';
 import { ConfigService } from './services/config.service';
 import { CoinsService } from './services/coins.service';
 import { UsdPipe } from './models/usd-pipe';
+import { AssetPipe } from './models/asset-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoinsComponent,
     CoinComponent,
-    UsdPipe
+    UsdPipe,
+    AssetPipe
   ],
   imports: [
     BrowserModule,
