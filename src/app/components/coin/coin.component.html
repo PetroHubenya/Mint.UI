@@ -1,5 +1,7 @@
 <div class="container">
     <h1>{{ coin.name }}</h1>
+    
+    <!--Data list-->
     <dl class="row">
         
         <dt class="col-sm-3">Id</dt>
@@ -89,6 +91,23 @@
               <dd class="col-sm-8">Volume Weighted Average Price in the last 24 hours.</dd>
             </dl>
         </dd>
-
     </dl>
+
+    <!--History chart-->
+
+    <!--Radio toggle buttons-->
+    <input type="radio" class="btn-check" name="options-base" value="m30" id="option5" autocomplete="off" checked>
+    <label class="btn" for="option5">30 minutes</label>
+
+    <input type="radio" class="btn-check" name="options-base" value="h1" id="option6" autocomplete="off">
+    <label class="btn" for="option6">1 hour</label>
+
+    <input type="radio" class="btn-check" name="options-base" value="h12" id="option7" autocomplete="off">
+    <label class="btn" for="option7">12 hours</label>
+
+    <input type="radio" class="btn-check" name="options-base" value="d1" id="option8" autocomplete="off">
+    <label class="btn" for="option8">1 day</label>
+
+    <!--Verification of the interval value-->
+    <p>Interval = </p>
 </div>
