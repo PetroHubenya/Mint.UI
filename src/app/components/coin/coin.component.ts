@@ -41,7 +41,6 @@ export class CoinComponent implements OnInit {
   }
 
   getCoin(): void {
-
     this.route.paramMap.subscribe({
       next: (param) => {
         const id = param.get('id');
@@ -57,5 +56,23 @@ export class CoinComponent implements OnInit {
         }
       }
     })
+  }
+
+  getCoinHistoryByIdAndInterval(): void {
+    this.route.paramMap.subscribe({
+      next: (param) => {
+        const id = param.get('id');
+        if (id !== null && this.interval !== undefined) {
+          this.coinService.GetCoinHistoryByIdAndInterval(id, this.interval).subscribe({
+            next: (responce) => {
+              this.coinHistoryList = responce; // Receive the responce from the API and
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        }
+      }
+    });
   }
 }
