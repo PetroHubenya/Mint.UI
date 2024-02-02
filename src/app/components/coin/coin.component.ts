@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CoinHistory } from 'src/app/models/coin-history';
 import { Coin } from 'src/app/models/coin.model';
 import { CoinsService } from 'src/app/services/coins.service';
 
@@ -26,6 +27,8 @@ export class CoinComponent implements OnInit {
   }
 
   interval: string = 'm30'; // Default value
+
+  coinHistoryList: CoinHistory[] = [];
 
   constructor(
     private coinService: CoinsService,

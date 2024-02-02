@@ -13,7 +13,7 @@ export class CoinsComponent implements OnInit{
   
   searchString = '';
 
-  coins: Coin[] = [];
+  coins: Coin[] = [];  
 
   constructor(
     private coinService: CoinsService,

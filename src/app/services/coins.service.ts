@@ -3,6 +3,7 @@ import { Coin } from '../models/coin.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from './config.service';
+import { CoinHistory } from '../models/coin-history';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,10 @@ export class CoinsService {
   // Search coins by name or symbol.
   SearchCoinByNameOrSymbol(searchString: string): Observable<Coin[]> {
     return this.http.get<Coin[]>(this.configService.apiUrl + "/Coin/search=" + searchString);
+  }
+
+  // Get coin history by id and interval.
+  GetCoinHistoryByIdAndInterval(id: string, interval: string): Observable<CoinHistory[]> {
+    return this.http.get<CoinHistory[]>(this.configService.apiUrl + "/Coin/id=" + id + "/history_interval=" + interval);
   }
 }
