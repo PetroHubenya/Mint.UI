@@ -25,6 +25,8 @@ export class CoinComponent implements OnInit {
     vwap24Hr: 0
   }
 
+  interval: string = 'm30'; // Default value
+
   constructor(
     private coinService: CoinsService,
     private router: Router,
