@@ -38,6 +38,7 @@ export class CoinComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCoin();
+    this.getCoinHistoryByIdAndInterval();
   }
 
   getCoin(): void {
