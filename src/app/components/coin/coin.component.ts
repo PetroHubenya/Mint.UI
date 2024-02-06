@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CoinHistory } from 'src/app/models/coin-history';
 import { Coin } from 'src/app/models/coin.model';
 import { CoinsService } from 'src/app/services/coins.service';
+import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-coin',
@@ -30,6 +31,8 @@ export class CoinComponent implements OnInit {
 
   coinHistoryList: CoinHistory[] = [];
 
+  chart: any = []
+
   constructor(
     private coinService: CoinsService,
     private router: Router,
@@ -39,6 +42,7 @@ export class CoinComponent implements OnInit {
   ngOnInit(): void {
     this.getCoin();
     this.getCoinHistoryByIdAndInterval();
+    this.historyChart();
   }
 
   getCoin(): void {
@@ -76,4 +80,28 @@ export class CoinComponent implements OnInit {
       }
     });
   }
+
+  historyChart() {
+    this.chart = new Chart('canvas', {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [
+          {
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  }
+
 }
