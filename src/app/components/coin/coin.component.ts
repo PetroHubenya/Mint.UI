@@ -33,6 +33,10 @@ export class CoinComponent implements OnInit {
 
   chart: any = []
 
+  priceUsd: number[] = []; // This variable will contain list of priceUsd values from the coinHistoryList.
+
+  time: number[] = [];     // This variable will contain list of time values from the coinHistoryList.
+
   constructor(
     private coinService: CoinsService,
     private router: Router,
@@ -42,7 +46,6 @@ export class CoinComponent implements OnInit {
   ngOnInit(): void {
     this.getCoin();
     this.getCoinHistoryByIdAndInterval();
-    this.historyChart();
   }
 
   getCoin(): void {
@@ -71,6 +74,9 @@ export class CoinComponent implements OnInit {
           this.coinService.GetCoinHistoryByIdAndInterval(id, this.interval).subscribe({
             next: (responce) => {
               this.coinHistoryList = responce; // Receive the responce from the API and
+              this.priceUsd = this.coinHistoryList.map(data => data.priceUsd);
+              this.time = this.coinHistoryList.map(data => data.time);
+              this.historyChart();
             },
             error: (err) => {
               console.log(err);
@@ -85,11 +91,11 @@ export class CoinComponent implements OnInit {
     this.chart = new Chart('historyChart', {
       type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: this.time,
         datasets: [
           {
             label: 'priceUsd',
-            data: [12, 19, 3, 5, 2, 3],
+            data: this.priceUsd,
             borderWidth: 1,
           },
         ],
