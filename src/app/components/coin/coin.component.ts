@@ -82,13 +82,13 @@ export class CoinComponent implements OnInit {
   }
 
   historyChart() {
-    this.chart = new Chart('canvas', {
-      type: 'bar',
+    this.chart = new Chart('historyChart', {
+      type: 'line',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [
           {
-            label: '# of Votes',
+            label: 'priceUsd',
             data: [12, 19, 3, 5, 2, 3],
             borderWidth: 1,
           },

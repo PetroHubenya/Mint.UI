@@ -94,25 +94,32 @@
     </dl>
 
     <!--History chart-->
+    <div>
+      <canvas id="historyChart">{{chart}}</canvas>
+    </div>
+
 
     <!--Radio toggle buttons-->
-    <input type="radio" class="btn-check" name="interval" value="m30" id="option5" autocomplete="off" 
-           [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()" checked>
-    <label class="btn" for="option5">30 minutes</label>
+    <div class="radio">
+      <input type="radio" class="btn-check" name="interval" value="m30" id="option5" autocomplete="off" 
+             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()" checked>
+      <label class="btn" for="option5">30 minutes</label>
 
-    <input type="radio" class="btn-check" name="interval" value="h1" id="option6" autocomplete="off" 
-           [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
-    <label class="btn" for="option6">1 hour</label>
+      <input type="radio" class="btn-check" name="interval" value="h1" id="option6" autocomplete="off" 
+             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
+      <label class="btn" for="option6">1 hour</label>
 
-    <input type="radio" class="btn-check" name="interval" value="h12" id="option7" autocomplete="off" 
-           [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
-    <label class="btn" for="option7">12 hours</label>
+      <input type="radio" class="btn-check" name="interval" value="h12" id="option7" autocomplete="off" 
+             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
+      <label class="btn" for="option7">12 hours</label>
 
-    <input type="radio" class="btn-check" name="interval" value="d1" id="option8" autocomplete="off" 
-           [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
-    <label class="btn" for="option8">1 day</label>
+      <input type="radio" class="btn-check" name="interval" value="d1" id="option8" autocomplete="off" 
+             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
+      <label class="btn" for="option8">1 day</label>
+    </div>    
 
     <!--Verification of the interval value-->
     <p>Interval = {{ interval }}</p>
-    <p>Coin history: {{ coinHistoryList | json }}</p>
+    <!--<p>Coin history: {{ coinHistoryList | json }}</p>-->
+
 </div>
