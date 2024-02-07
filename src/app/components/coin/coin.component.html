@@ -102,19 +102,19 @@
     <!--Radio toggle buttons-->
     <div class="radio">
       <input type="radio" class="btn-check" name="interval" value="m30" id="option5" autocomplete="off" 
-             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()" checked>
+             [(ngModel)]="interval" (change)="updateChart()" checked>
       <label class="btn" for="option5">30 minutes</label>
 
       <input type="radio" class="btn-check" name="interval" value="h1" id="option6" autocomplete="off" 
-             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
+             [(ngModel)]="interval" (change)="updateChart()">
       <label class="btn" for="option6">1 hour</label>
 
       <input type="radio" class="btn-check" name="interval" value="h12" id="option7" autocomplete="off" 
-             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
+             [(ngModel)]="interval" (change)="updateChart()">
       <label class="btn" for="option7">12 hours</label>
 
       <input type="radio" class="btn-check" name="interval" value="d1" id="option8" autocomplete="off" 
-             [(ngModel)]="interval" (change)="getCoinHistoryByIdAndInterval()">
+             [(ngModel)]="interval" (change)="updateChart()">
       <label class="btn" for="option8">1 day</label>
     </div>    
 

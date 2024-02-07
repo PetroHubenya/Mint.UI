@@ -45,7 +45,7 @@ export class CoinComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCoin();
-    this.getCoinHistoryByIdAndInterval();
+    this.getCoinHistoryByIdAndInterval();    
   }
 
   getCoin(): void {
@@ -109,5 +109,31 @@ export class CoinComponent implements OnInit {
       },
     });
   }
+
+  updateChart(): void {
+    this.route.paramMap.subscribe({
+      next: (param) => {
+        const id = param.get('id');
+        if (id !== null && this.interval !== undefined) {
+          this.coinService.GetCoinHistoryByIdAndInterval(id, this.interval).subscribe({
+            next: (responce) => {
+              this.coinHistoryList = responce; // Receive the responce from the API and
+              this.priceUsd = this.coinHistoryList.map(data => data.priceUsd);
+              this.time = this.coinHistoryList.map(data => data.time);
+              this.chart.data.labels = this.time;
+              this.chart.data.datasets[0].data = this.priceUsd;
+              this.chart.update();
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+        }
+      }
+    });
+
+  }
+
+
 
 }
