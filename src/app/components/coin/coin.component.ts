@@ -99,7 +99,7 @@ export class CoinComponent implements OnInit {
         labels: this.time,
         datasets: [
           {
-            label: 'priceUsd',
+            label: 'Price USD',
             data: this.priceUsd,
             borderWidth: 1,
           },
