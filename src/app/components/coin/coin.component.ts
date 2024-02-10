@@ -35,11 +35,10 @@ export class CoinComponent implements OnInit {
 
   priceUsd: number[] = []; // This variable will contain list of priceUsd values from the coinHistoryList.
 
-  time: number[] = [];     // This variable will contain list of time values from the coinHistoryList.
+  time: string[] = [];     // This variable will contain list of time values from the coinHistoryList.
 
   constructor(
     private coinService: CoinsService,
-    private router: Router,
     private route: ActivatedRoute
   ) {}
 
@@ -47,6 +46,8 @@ export class CoinComponent implements OnInit {
     this.getCoin();
     this.getCoinHistoryByIdAndInterval();    
   }
+
+  // This method requests information about the coin from the backend. 
 
   getCoin(): void {
     this.route.paramMap.subscribe({
@@ -66,6 +67,8 @@ export class CoinComponent implements OnInit {
     })
   }
 
+  // This method requests a coin history from the backend. 
+
   getCoinHistoryByIdAndInterval(): void {
     this.route.paramMap.subscribe({
       next: (param) => {
@@ -75,7 +78,7 @@ export class CoinComponent implements OnInit {
             next: (responce) => {
               this.coinHistoryList = responce; // Receive the responce from the API and
               this.priceUsd = this.coinHistoryList.map(data => data.priceUsd);
-              this.time = this.coinHistoryList.map(data => data.time);
+              this.time = this.coinHistoryList.map(data => new Date(data.time).toLocaleString());
               this.historyChart();
             },
             error: (err) => {
@@ -86,6 +89,8 @@ export class CoinComponent implements OnInit {
       }
     });
   }
+
+  // This method is called to generate chart first time, when the page is initiated.
 
   historyChart() {
     this.chart = new Chart('historyChart', {
@@ -110,6 +115,8 @@ export class CoinComponent implements OnInit {
     });
   }
 
+  // This method is called each time the "Interval" radio button is pressed. It updates the chart. 
+
   updateChart(): void {
     this.route.paramMap.subscribe({
       next: (param) => {
@@ -119,7 +126,7 @@ export class CoinComponent implements OnInit {
             next: (responce) => {
               this.coinHistoryList = responce; // Receive the responce from the API and
               this.priceUsd = this.coinHistoryList.map(data => data.priceUsd);
-              this.time = this.coinHistoryList.map(data => data.time);
+              this.time = this.coinHistoryList.map(data => new Date(data.time).toLocaleString());
               this.chart.data.labels = this.time;
               this.chart.data.datasets[0].data = this.priceUsd;
               this.chart.update();
@@ -131,9 +138,6 @@ export class CoinComponent implements OnInit {
         }
       }
     });
-
   }
-
-
 
 }

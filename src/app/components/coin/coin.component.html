@@ -94,13 +94,12 @@
     </dl>
 
     <!--History chart-->
-    <div>
+    <div class="chart-container">
       <canvas id="historyChart">{{chart}}</canvas>
     </div>
 
-
     <!--Radio toggle buttons-->
-    <div class="radio">
+    <div class="radio-container">
       <input type="radio" class="btn-check" name="interval" value="m30" id="option5" autocomplete="off" 
              [(ngModel)]="interval" (change)="updateChart()" checked>
       <label class="btn" for="option5">30 minutes</label>
@@ -119,9 +118,9 @@
     </div>    
 
     <!--Verification of the interval value-->
-    <p>Interval = {{ interval }}</p>
+    <!--<p>Interval = {{ interval }}</p>-->
     <!--<p>Coin history: {{ coinHistoryList | json }}</p>-->
-    <p>priceUsd = {{priceUsd}}</p>
-    <p>time = {{time}}</p>
+    <!--<p>priceUsd = {{priceUsd}}</p>-->
+    <!--<p>time = {{time}}</p>-->
 
 </div>
